@@ -1,5 +1,17 @@
+<!--
+<nav class="navbar sticky-top navbar-light bg-light shadow-lg p-3 mb-5 bg-white rounded">
+  <h5 class="my-0 mr-md-auto font-weight-normal">{{title}}</h5>
+  <nav class="my-2 my-md-0 mr-md-3 sticky-top navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar navbar-fixed-top">
+    <a class="nav-item nav-link text-dark p-2" routerLink="/">Home</a>
+    <a class="p-2 text-dark" href="#">Enterprise</a>
+    <a class="p-2 text-dark" href="#">Support</a>
+    <a class="p-2 text-dark" href="#">Pricing</a>
+  </nav>
+  <a class="btn btn-outline-primary" href="#">Sign up</a>
+</nav>
+-->
 
-<div  class="carousel slide" data-ride="carousel">
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -7,21 +19,21 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/assets/images/slide-01.jpg" class="d-block w-100" alt="1">
+      <img src="/assets/images/slide-011.jpg" class="d-block w-100 h-30" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="/assets/images/slide-02.jpg" class="d-block w-100" alt="2">
+      <img src="/assets/images/slide-022.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Second slide label</h5>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="/assets/images/slide-03.jpg" class="d-block w-100" alt="3">
+      <img src="/assets/images/slide-03.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
         <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -37,3 +49,265 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<!--
+<div class="btn-group mx-auto" style="width: 200px;" role="group" aria-label="Basic example">
+  <button type="button my-auto" class="btn btn-outline-primary">All</button>
+  <button type="button" class="btn btn-outline-primary">Costumes</button>
+  <button type="button" class="btn btn-outline-primary">Pants</button>
+  <button type="button my-auto" class="btn btn-outline-primary">T-shirts</button>
+</div>
+-->
+
+<div class="album py-5 bg-light">
+
+  <div class="container sticky-top py-3">
+    <div class="row">
+      <div class="col-md-3">
+        <mat-form-field>
+          <mat-label>Sort via price</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let item of listSortPrice" [value]="item.value">
+              {{item.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-3">
+        <mat-form-field>
+          <mat-label>Sort via TOP</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let item of listSortTop" [value]="item">
+              {{item.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active">
+            <input type="radio" name="options" id="option1" checked> All
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option2"> Costumes
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3"> Pants
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3"> shirts
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="/assets/images/catalog/cat10.jpg" class="img-fluid" >
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/item">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/purchase">buy</button>
+                </div>
+                <h3 class="text-muted">100$</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="/assets/images/catalog/cat11.jpg" class="img-fluid" >
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/item">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/purchase">buy</button>
+                </div>
+                <h3 class="text-muted">100$</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="/assets/images/catalog/cat2.jpg" class="img-fluid" >
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/item">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/purchase">buy</button>
+                </div>
+                <h3 class="text-muted">100$</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="/assets/images/catalog/cat3.jpg" class="img-fluid" >
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/item">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/purchase">buy</button>
+                </div>
+                <h3 class="text-muted">100$</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="/assets/images/catalog/cat4.jpg" class="img-fluid" >
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/item">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/purchase">buy</button>
+                </div>
+                <h3 class="text-muted">100$</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="/assets/images/catalog/cat5.jpg" class="img-fluid" >
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/item">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/purchase">buy</button>
+                </div>
+                <h3 class="text-muted">100$</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="/assets/images/catalog/cat6.jpg" class="img-fluid" >
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/item">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/purchase">buy</button>
+                </div>
+                <h3 class="text-muted">100$</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="/assets/images/catalog/cat7.jpg" class="img-fluid" >
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/item">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/purchase">buy</button>
+                </div>
+                <h3 class="text-muted">100$</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+<!--
+          <div class="col-sm-4">
+              <div class="item">
+                <a href="#">
+                     <span class="notify-badge">NEW</span>
+                    <img src="/assets/images/catalog/cat8.jpg"  alt="" />
+                </a>
+            </div>
+          </div>
+            -->
+              <span class="notify-badge-sale">SELL</span>
+              <span class="notify-badge">NEW</span>
+              <img src="/assets/images/catalog/cat8.jpg" class="img-fluid" >
+
+
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/item">View</button>
+            <!--      <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/purchase">buy</button> -->
+                  <span style="font-size: 2em; color: Tomato;" matBadge="+" matBadgeColor="primary"><i class="fas fa-shopping-cart"></i></span>
+                </div>
+                <h3 class="text-muted">1050$</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="container">
+			<div class="row">
+				<div class="col-4">
+          <div class="card d-flex flex-row align-items-center">
+            <div class="pl-3">
+              <span style="font-size: 2em; color: Tomato;"><i class="fas fa-truck"></i></span>
+            </div>
+						<div class="pl-3 pt-3">
+              <h6>free shipping</h6>
+              <p>Suffered Alteration in Some Form</p>
+            </div>
+          </div>
+				</div>
+				<div class="col-4">
+					<div class="card d-flex flex-row align-items-center">
+            <div class="pl-3">
+              <span style="font-size: 2em; color: Tomato;">
+                <i class="fas fa-money-bill-wave"></i>
+              </span>
+            </div>
+          	<div class="pl-3 pt-3">
+							<h6>cach on delivery</h6>
+							<p>The Internet Tend To Repeat</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="card d-flex flex-row align-items-center">
+            <div class="pl-3">
+              <span style="font-size: 2em; color: Tomato;">
+                <i class="fas fa-undo"></i>
+              </span>
+            </div>
+            <div class="pl-3 pt-3">
+							<h6>45 days return</h6>
+							<p>Making it Look Like Readable</p>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+  <br><br><br>
+
+<!--  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/> -->

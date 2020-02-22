@@ -1,1 +1,88 @@
-<p>admin works!</p>
+<div class="container">
+  <div class="row">
+
+
+
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">Creating or fixing a product</h4>
+      <form class="needs-validation" novalidate="">
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label for="productId">Product ID</label>
+            <input type="text" class="form-control" id="productId" placeholder="" value="" required="">
+            <div class="invalid-feedback">Please enter the ID number of product</div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Search</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="productName">Product name</label>
+            <input type="text" class="form-control" id="productName" placeholder="" value="" required="">
+            <div class="invalid-feedback">Please enter the name of product</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="productDescription">Description</label>
+          <textarea class="form-control" id="productDescription" style="overflow:auto;resize:none" rows="4"></textarea>
+          <div class="invalid-feedback">
+            Please enter the description of the product.
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="productPrice">Price</label>
+            <input type="text" class="form-control" id="productPrice" placeholder="" required="">
+            <div class="invalid-feedback">Enter price.</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label for="productType">Type</label>
+            <select class="custom-select d-block w-100" id="productType" required="">
+              <option *ngFor="let item of types" [value]="item.viewValue">{{item.viewValue}}</option>
+
+            </select>
+            <div class="invalid-feedback">
+              Please select a type.
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label for="productSell">Sell</label>
+            <select class="custom-select d-block w-100" id="productSell" required="">
+              <option value="">NO</option>
+              <option>YES</option>
+            </select>
+          </div>
+
+          <div class="col-md-3 mb-3">
+            <label for="productNewPrice">New price</label>
+            <input type="text" class="form-control" id="productNewPrice" placeholder="" required="">
+            <div class="invalid-feedback">Please enter a new price.</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <form>
+              <div class="form-group">
+                <label for="choosePictures">Choose five picture</label>
+                <input type="file" class="form-control-file" id="choosePictures">
+              </div>
+            </form>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Send to data</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,8 @@
+<!--
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
   <h5 class="my-0 mr-md-auto font-weight-normal">{{title}}</h5>
-  <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-dark" href="#">Features</a>
+  <nav class="my-2 my-md-0 mr-md-3 sticky-top navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar navbar-fixed-top">
+    <a class="p-2 text-dark" routerLink="/">Home</a>
     <a class="p-2 text-dark" href="#">Enterprise</a>
     <a class="p-2 text-dark" href="#">Support</a>
     <a class="p-2 text-dark" href="#">Pricing</a>
@@ -9,4 +10,38 @@
   <a class="btn btn-outline-primary" href="#">Sign up</a>
 </div>
 
-<router-outlet></router-outlet>
+<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+-->
+<nav class="navbar sticky-top navbar-light bg-light shadow-lg p-3 mb-1 bg-white rounded">
+  <h5 class="my-0 mr-md-auto font-weight-normal">{{title}}</h5>
+  <a class="nav-item nav-link text-dark p-2" routerLink="/">Home</a>
+  <a class="p-2 text-dark" href="#">Enterprise</a>
+  <a class="p-2 text-dark" href="#">Support</a>
+  <a class="p-2 text-dark" href="#">Pricing</a>
+
+
+
+  <a class="p-2 text-dark" mat-button (click)="sidenav.open()"><span style="font-size: 2em; color: Black;" matBadge="3" matBadgeColor="primary"><i class="fas fa-shopping-cart"></i></span></a>
+
+
+  <a class="btn btn-outline-primary p-2" href="#">Sign up</a>
+</nav>
+
+<mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')" *ngIf="!shouldRun" >
+
+  <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose position="end">
+    <p><button mat-button (click)="close('toggle button')">Toggle</button></p>
+  </mat-sidenav>
+
+  <router-outlet></router-outlet>
+
+</mat-sidenav-container>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+  <p class="mb-1">© 2017-2019 {{title}}</p>
+  <ul class="list-inline">
+    <li class="list-inline-item"><a routerLink="/privacy">Privacy</a></li>
+    <li class="list-inline-item"><a href="#">Terms</a></li>
+    <li class="list-inline-item"><a href="#">Support</a></li>
+  </ul>
+</footer>

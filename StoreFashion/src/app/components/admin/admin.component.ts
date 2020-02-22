@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
+  types: Type[] = [
+    {viewValue: 'Рубашка'},
+    {viewValue: 'Пежама'},
+    {viewValue: 'Шорты'},
+    {viewValue: 'Кофточки'},
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+}
+
+interface Type {
+  viewValue: string;
 }
