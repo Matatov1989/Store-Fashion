@@ -16,13 +16,17 @@ import { ItemComponent } from './components/item/item.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { PurchaseComponent } from './components/purchase/purchase.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { AboutComponent } from './components/about/about.component';
 
 const appRoutes: Routes = [
   {path: '', component:HomeComponent},
   {path: 'item', component:ItemComponent},
   {path: 'purchase', component:PurchaseComponent},
   {path: 'privacy', component:PrivacyComponent},
-  {path: 'admin', component:AdminComponent}
+  {path: 'admin', component:AdminComponent},
+  {path: 'product-detail', component:ProductDetailComponent},
+  {path: 'about', component:AboutComponent}
 ]
 
 @NgModule({
@@ -32,7 +36,9 @@ const appRoutes: Routes = [
     ItemComponent,
     PrivacyComponent,
     PurchaseComponent,
-    AdminComponent
+    AdminComponent,
+    ProductDetailComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
