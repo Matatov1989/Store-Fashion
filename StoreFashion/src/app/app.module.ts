@@ -12,7 +12,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { ItemComponent } from './components/item/item.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { PurchaseComponent } from './components/purchase/purchase.component';
 import { AdminComponent } from './components/admin/admin.component';
@@ -21,7 +20,6 @@ import { AboutComponent } from './components/about/about.component';
 
 const appRoutes: Routes = [
   {path: '', component:HomeComponent},
-  {path: 'item', component:ItemComponent},
   {path: 'purchase', component:PurchaseComponent},
   {path: 'privacy', component:PrivacyComponent},
   {path: 'admin', component:AdminComponent},
@@ -33,7 +31,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    ItemComponent,
     PrivacyComponent,
     PurchaseComponent,
     AdminComponent,
