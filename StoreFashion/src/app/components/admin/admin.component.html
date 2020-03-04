@@ -1,94 +1,107 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h4 class="mb-3">Creating or fixing a product</h4>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <label for="productId">Product ID</label>
-    </div>
-    <div class="col-md-4">
-      <input type="text" class="form-control" id="productId" placeholder="" value="" required="">
-      <div class="invalid-feedback">Please enter the ID number of product</div>
-    </div>
-    <div class="col-md-2">
-      <button class="btn btn-primary btn-block" type="submit">Search</button>
-    </div>
-  </div>
-
-  <hr>
-
-  <div class="row">
-    <div class="col-md-6">
-      <label for="productName">Product name</label>
-      <input type="text" class="form-control" id="productName" placeholder="" value="" required="">
-      <div class="invalid-feedback">Please enter the name of product</div>
-    </div>
-  </div>
-
-  <div class="row mt-3">
-    <div class="col-md-6">
-      <label for="productDescription">Description</label>
-      <textarea class="form-control" id="productDescription" style="overflow:auto;resize:none" rows="4"></textarea>
-      <div class="invalid-feedback">
-        Please enter the description of the product.
+  <form class="" action="index.html" method="post" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="mb-3">Creating or fixing a product</h4>
       </div>
     </div>
-  </div>
 
-  <div class="row mt-3">
-    <div class="col-md-6">
-      <label for="productPrice">Price</label>
-      <input type="text" class="form-control" id="productPrice" placeholder="" required="">
-      <div class="invalid-feedback">Enter price.</div>
-    </div>
-  </div>
-
-  <div class="row mt-3">
-    <div class="col-md-6">
-      <label for="productType">Type</label>
-      <select class="custom-select d-block w-100" id="productType" required="">
-        <option *ngFor="let item of types" [value]="item.viewValue">{{item.viewValue}}</option>
-      </select>
-      <div class="invalid-feedback">
-        Please select a type.
+    <div class="row">
+      <div class="col-md-12">
+        <label for="productId">Product ID</label>
+      </div>
+      <div class="col-md-4">
+        <input type="text" class="form-control" id="productId" placeholder="" value="" required="">
+        <div class="invalid-feedback">Please enter the ID number of product</div>
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-primary btn-block" type="submit">Search</button>
       </div>
     </div>
-  </div>
 
-  <div class="row mt-3">
-    <div class="col-md-2">
-      <label for="productSell">Sell</label>
-      <select class="custom-select d-block w-100" id="productSell" required="">
-        <option value="">NO</option>
-        <option>YES</option>
-      </select>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-6">
+        <label for="productName">Product name</label>
+        <input type="text" formControlName="formProductName" class="form-control" id="productName" placeholder="" value="" required="">
+        <div class="invalid-feedback">Please enter the name of product</div>
+      </div>
     </div>
 
-    <div class="col-md-4">
-      <label for="productNewPrice">New price</label>
-      <input type="text" class="form-control" id="productNewPrice" placeholder="" required="">
-      <div class="invalid-feedback">Please enter a new price.</div>
-    </div>
-  </div>
-
-  <div class="row mt-3">
-    <div class="col-md-6">
-      <form>
-        <div class="form-group">
-          <label for="choosePictures">Choose five picture</label>
-          <input type="file" class="form-control-file" id="choosePictures">
+    <div class="row mt-3">
+      <div class="col-md-6">
+        <label for="productDescription">Description</label>
+        <textarea type="text" formControlName="formProductDescription" class="form-control" id="productDescription" style="overflow:auto;resize:none" rows="4"></textarea>
+        <div class="invalid-feedback">
+          Please enter the description of the product.
         </div>
-      </form>
+      </div>
     </div>
-  </div>
 
-  <div class="row mt-3">
-    <div class="col-md-6">
-      <button class="btn btn-primary btn-lg btn-block" type="submit">Send to data</button>
+    <div class="row mt-3">
+      <div class="col-md-6">
+        <label for="productPrice">Price</label>
+        <input type="number" formControlName="formProductPrice" class="form-control" id="productPrice" placeholder="" required="">
+        <div class="invalid-feedback">Enter price.</div>
+      </div>
     </div>
-  </div>
 
+    <div class="row mt-3">
+      <div class="col-md-6">
+        <label for="productType">Type</label>
+        <select class="custom-select d-block w-100" formControlName="formProductType" class="form-control" id="productType" required="">
+          <option *ngFor="let item of types" [value]="item.viewValue">{{item.viewValue}}</option>
+        </select>
+        <div class="invalid-feedback">
+          Please select a type.
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-md-2">
+        <label for="productSell">Sell</label>
+        <select class="custom-select d-block w-100" formControlName="formProductSell" class="form-control" >
+          <option selected value="false">NO</option>
+          <option value="true">YES</option>
+        </select>
+      </div>
+
+      <div class="col-md-4">
+        <label for="productNewPrice">New price</label>
+        <input type="text" class="form-control" id="productNewPrice" placeholder="" required="">
+        <div class="invalid-feedback">Please enter a new price.</div>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <p>The default dropzone.</p>
+      <div class="col-md-12">
+        <!-- npm i ngx-dropzone -->
+        <ngx-dropzone (change)="onSelect($event)">
+            <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+            <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)" style="display: flex; height: 140px; min-height: 140px; min-width: 180px; max-width: 180px; justify-content: center; align-items: center; padding: 0px 20px; margin: 10px; border-radius: 5px; position: relative;">
+              <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+            </ngx-dropzone-image-preview>
+        </ngx-dropzone>
+
+
+      </div>
+<!--
+      <div class="col-md-6">
+          <div class="form-group">
+            <label for="choosePictures">Choose five picture</label>
+            <input type="file" class="form-control-file" id="choosePictures">
+          </div>
+      </div>
+      -->
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-md-6">
+        <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="!profileForm.valid">Send to data</button>
+      </div>
+    </div>
+  </form>
 </div>

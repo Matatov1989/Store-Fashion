@@ -89,7 +89,7 @@
         </button>
 
         <div class="dropdown-menu">
-          <form class="px-4 py-3">
+          <div class="px-4 py-3">
 
             <div class="form-group">
               <label for="exampleDropdownFormEmail1">Hello dear User</label>
@@ -99,18 +99,9 @@
               <label for="exampleDropdownFormPassword1">Your balls: 11 </label>
             </div>
 
-            <div class="form-group">
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                <label class="form-check-label" for="dropdownCheck">
-                  отписаться от рассылки
-                </label>
-              </div>
-            </div>
-
             <button type="button" class="btn btn-primary btn-lg btn-block rounded-pill">Sign out</button>
 
-          </form>
+          </div>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">как заработать баллы?</a>
         </div>
@@ -143,22 +134,24 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form class="" action="index.html" method="post" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label for="exampleFormControlInput1">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <input type="email" class="form-control" formControlName="mailAddress" id="exampleFormControlInput1" placeholder="name@example.com">
           </div>
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" style="overflow:auto;resize:none" rows="4"></textarea>
+            <textarea class="form-control" formControlName="mailText" id="exampleFormControlTextarea1" style="overflow:auto;resize:none" rows="4"></textarea>
           </div>
-        </form>
 
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="submit" [disabled]="!contactForm.valid">Send</button>
+          </div>
+
+        </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send</button>
-      </div>
+
     </div>
   </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -19,5 +20,14 @@ export class AppComponent {
    }
 
    shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
+
+   contactForm = new FormGroup({
+     mailAddress: new FormControl(''),
+     mailText: new FormControl(''),
+   });
+
+   onSubmit() {
+     console.log('FORM ', this.contactForm.value);
+   }
 
 }
