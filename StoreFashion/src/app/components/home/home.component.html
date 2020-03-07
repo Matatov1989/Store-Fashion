@@ -1,16 +1,3 @@
-<!--
-<nav class="navbar sticky-top navbar-light bg-light shadow-lg p-3 mb-5 bg-white rounded">
-  <h5 class="my-0 mr-md-auto font-weight-normal">{{title}}</h5>
-  <nav class="my-2 my-md-0 mr-md-3 sticky-top navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar navbar-fixed-top">
-    <a class="nav-item nav-link text-dark p-2" routerLink="/">Home</a>
-    <a class="p-2 text-dark" href="#">Enterprise</a>
-    <a class="p-2 text-dark" href="#">Support</a>
-    <a class="p-2 text-dark" href="#">Pricing</a>
-  </nav>
-  <a class="btn btn-outline-primary" href="#">Sign up</a>
-</nav>
--->
-
 <!-- CAROUSEL -->
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -96,10 +83,43 @@
   </div>
 </div>
 
-
-<!-- PRODUCTS -->
 <div class="album py-5 bg-light">
-    <div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+
+          <span class="notify-badge-sale">SELL</span>
+          <span class="notify-badge">NEW</span>
+          <img src="/assets/images/catalog/cat8.jpg" class="img-fluid" >
+
+          <div class="card-body">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/product-detail">
+                  <span style="font-size: 2em; color: Tomato;">
+                    <i class="far fa-eye"></i>
+                  </span>
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/purchase">
+                  <span style="font-size: 2em; color: Tomato;" matBadge="+" matBadgeColor="primary">
+                    <i class="fas fa-shopping-cart"></i>
+                  </span>
+                </button>
+              </div>
+              <h3 class="text-muted">1050$</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS
+<div class="album py-5 bg-light">
+  <div class="container">
       <div class="row">
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
@@ -255,9 +275,9 @@
           </div>
         </div>
       </div>
-    </div>
   </div>
-
+</div>
+-->
   <br>
 
   <div class="container">
